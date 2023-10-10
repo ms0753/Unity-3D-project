@@ -16,6 +16,6 @@ MonoBehaviour:
   description: "\uADF8\uB0E5 \uB3CC\uC785\uB2C8\uB2E4"
   type: 0
   icon: {fileID: 21300000, guid: e61976ceaf6919c47853f5a7ea09288b, type: 3}
-  dropPrefabs: {fileID: 0}
+  dropPrefabs: {fileID: 344024870618276162, guid: bcf5b4f322070fc488ac251d58f728e0, type: 3}
   canStack: 1
   maxStackAmount: 12
