@@ -118,7 +118,7 @@ public class Inventory : MonoBehaviour
             UpdateUI();
             return;
         }
-        ThrowItem(item);
+        //ThrowItem(item);
     }
 
     void ThrowItem(ItemData item)
