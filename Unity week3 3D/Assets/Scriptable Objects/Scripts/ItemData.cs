@@ -32,7 +32,7 @@ public class ItemData : ScriptableObject
     public string description;
     public ItemType type;
     public Sprite icon;
-    public GameObject dropPrefabs;
+    public GameObject dropPrefab;
 
     [Header("Stacking")]
     public bool canStack;
@@ -40,4 +40,7 @@ public class ItemData : ScriptableObject
 
     [Header("Consumable")]
     public ItemDataConsumable[] consumables;
+
+    [Header("Equip")]
+    public GameObject equipPrefab;
 }

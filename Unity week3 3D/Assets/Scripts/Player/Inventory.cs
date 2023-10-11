@@ -123,7 +123,7 @@ public class Inventory : MonoBehaviour
 
     void ThrowItem(ItemData item)
     {
-        Instantiate(item.dropPrefabs, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360f));
+        Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360f));
     }
 
     void UpdateUI()
@@ -218,16 +218,33 @@ public class Inventory : MonoBehaviour
 
     public void OnEquipButton()
     {
+        if (uiSlots[curEquipIndex].equipped)
+        {
+            UnEquip(curEquipIndex);
+        }
 
+        uiSlots[selectedItemIndex].equipped = true;
+        curEquipIndex = selectedItemIndex;
+        EquipManager.Instance.EquipNew(selectedItem.item);
+        UpdateUI();
+
+        SelectItem(selectedItemIndex);
     }
+
+
     void UnEquip(int index)
     {
+        uiSlots[index].equipped = false;
+        EquipManager.Instance.UnEquip();
+        UpdateUI();
 
+        if(selectedItemIndex == index)
+            SelectItem(index);
     }
 
     public void OnUnEquipButton()
     {
-
+        UnEquip(selectedItemIndex);
     }
 
     public void OnDropButton()
